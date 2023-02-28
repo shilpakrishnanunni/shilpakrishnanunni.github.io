@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="2023_02_28.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div>
+        <h3>GBF Spark Calculator</h3>
+    </div>
+    <div id="left">
+        <!-- <form name="spark_form" onsubmit="calculateSpark()"> -->
+        <div id="input_tix">
+            <span class="inputs">
+                <label for="tix">Single Draw Tickets</label>
+                <input type="text" name="tix" id="tix">
+            </span>
+            <span class="inputs">
+                <label for="ten_tix">10-part draw tickets</label>
+                <input type="text" name="ten_tix" id="ten_tix">
+            </span>
+            <span class="inputs">
+                <label for="crystals" id="crystals">Crystals</label>
+                <input type="text" name="crystals">
+            </span>
+        </div>
+        <div id="div_calculate">
+            <span>
+                <button type="button" id="button_calculate" onclick="calculateSpark()">Calculate Spark</button>
+            </span>
+        </div>
+        <!-- </form> -->
+        
+        <div id="output_tix">
+            <span >
+                <h5>Draws: <span id="draws">0</span>/100</h5>
+            </span>
+            <span >
+                <h5>Percentage: <span id="percentage">0</span> %</h5>
+            </span>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <script src="2023_02_28.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
