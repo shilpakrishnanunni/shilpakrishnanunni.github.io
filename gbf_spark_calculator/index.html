@@ -15,27 +15,25 @@
     </div>
     <div id="left">
         <!-- <form name="spark_form" onsubmit="calculateSpark()"> -->
-        <div id="input_tix">
-            <span class="inputs">
+        <div id="input_tix" class="row">
+            <span class="col">
                 <label for="tix">Single Draw Tickets</label>
-                <input type="text" name="tix" id="tix">
+                <input type="text" name="tix" id="tix" placeholder="0">
             </span>
-            <span class="inputs">
+            <span class="col">
                 <label for="ten_tix">10-part draw tickets</label>
-                <input type="text" name="ten_tix" id="ten_tix">
+                <input type="text" name="ten_tix" id="ten_tix" placeholder="0">
             </span>
-            <span class="inputs">
+            <span class="col">
                 <label for="crystals">Crystals</label>
-                <input type="text" name="crystals" id="crystals">
+                <input type="text" name="crystals" id="crystals" placeholder="0">
             </span>
         </div>
-        <div id="div_calculate">
+        <div id="calculate_button">
             <span>
                 <button type="button" id="button_calculate" onclick="calculateSpark()">Calculate Spark</button>
             </span>
         </div>
-        <!-- </form> -->
-        
         <div id="output_tix">
             <span >
                 <h5>Draws: <span id="draws">0</span>/100</h5>
@@ -48,6 +46,7 @@
     <div id="right">
         <canvas id="myChart"></canvas>
     </div>
+    <div id="clear_tag"></div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

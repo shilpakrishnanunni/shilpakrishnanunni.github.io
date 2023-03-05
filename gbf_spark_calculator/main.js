@@ -6,9 +6,19 @@ function calculateSpark() {
     let tix = parseInt(document.getElementById('tix').value);
     let ten_tix = parseInt(document.getElementById('ten_tix').value);
     let crystals = parseInt(document.getElementById('crystals').value);
+
+    if (!tix) {
+      tix = 0;
+    }
+    if (!ten_tix) {
+      ten_tix = 0;
+    }
+    if (!crystals) {
+      crystals = 0;
+    }
     let rolls = tix + 10*ten_tix + Math.floor(crystals/300);
     // let rolls = Math.floor(crystals/300);
-    let perc = parseFloat(rolls / 3).toFixed(2);
+    let perc = parseFloat((tix*300 + ten_tix*3000 + crystals)/900).toFixed(2);
     document.getElementById('draws').innerHTML=rolls;
     document.getElementById('percentage').innerHTML=perc;
     

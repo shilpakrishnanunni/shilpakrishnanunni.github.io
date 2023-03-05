@@ -2,6 +2,31 @@
     padding: 0px;
     margin: 0px;
 }
-.inputs {
-    width: 15%;
+h3 {
+    color: blue;
+}
+
+#left {
+    float: left;
+    width: 50%;
+    /* display: flex; */
+}
+#right {
+    float: right;
+    width:50%;
+}
+#clear_tag {
+    clear: both;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    flex: 1;
+    /* display: inline-block; */
+    /* width: 33.33%; */
+    height: 100px;
+    /* box-sizing: border-box; */
+    /* padding: 10px; */
 }
