@@ -27,6 +27,14 @@ h3 {
     /* display: inline-block; */
     /* width: 33.33%; */
     height: 100px;
+    color: rgb(0, 0, 255);
     /* box-sizing: border-box; */
     /* padding: 10px; */
+}
+#button_calculate {
+    height: 30px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+    border: none;
 }

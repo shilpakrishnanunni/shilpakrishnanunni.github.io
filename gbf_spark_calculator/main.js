@@ -1,6 +1,6 @@
 // Modern front-end applications often use JavaScript module bundlers, so we’ve picked Parcel as a nice zero-configuration build tool. We’re also installing Chart.js v4 and a JavaScript client for Cube , an open-source API for data apps we’ll use to fetch real-world data (more on that later).
 
-let button = document.getElementById('button_calculate');
+// let button = document.getElementById('button_calculate');
 
 function calculateSpark() {
     let tix = parseInt(document.getElementById('tix').value);
@@ -18,29 +18,38 @@ function calculateSpark() {
     }
     let rolls = tix + 10*ten_tix + Math.floor(crystals/300);
     // let rolls = Math.floor(crystals/300);
+    let perc_tix = (tix/300)*100
+    let perc_ten_tix = (ten_tix/30)*100
+    let perc_crystals = (crystals/90000)*100
     let perc = parseFloat((tix*300 + ten_tix*3000 + crystals)/900).toFixed(2);
     document.getElementById('draws').innerHTML=rolls;
     document.getElementById('percentage').innerHTML=perc;
     
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Single Tix','10 Part Tix','Crystals'],
+        datasets: [{
+          // label: '# of Votes',
+          data: [perc_tix,perc_ten_tix,perc_crystals],
+          backgroundColor: [
+            "rgb(0, 140, 255)",
+            "rgb(0, 102, 255)",
+            "rgb(0, 0, 255)"
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
 };
 
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
