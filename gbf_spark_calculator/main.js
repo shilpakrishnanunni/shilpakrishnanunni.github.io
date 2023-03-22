@@ -21,6 +21,7 @@ function calculateSpark() {
     let perc_tix = (tix/300)*100
     let perc_ten_tix = (ten_tix/30)*100
     let perc_crystals = (crystals/90000)*100
+    let perc_empty = 100 - perc_tix - perc_ten_tix - perc_crystals
     let perc = parseFloat((tix*300 + ten_tix*3000 + crystals)/900).toFixed(2);
     document.getElementById('draws').innerHTML=rolls;
     document.getElementById('percentage').innerHTML=perc;
@@ -33,16 +34,18 @@ function calculateSpark() {
         labels: ['Single Tix','10 Part Tix','Crystals'],
         datasets: [{
           // label: '# of Votes',
-          data: [perc_tix,perc_ten_tix,perc_crystals],
+          data: [perc_tix,perc_ten_tix,perc_crystals,perc_empty],
           backgroundColor: [
             "rgb(0, 140, 255)",
             "rgb(0, 102, 255)",
-            "rgb(0, 0, 255)"
+            "rgb(0, 0, 255)",
+            "rgb(150,150,150)"
           ],
-          borderWidth: 1
+          borderWidth: 1,
         }]
       },
       options: {
+        cutoutPercentage: 95,
         scales: {
           y: {
             beginAtZero: true
